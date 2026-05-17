@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/paper"
+    android:fadeScrollbars="false"
+    android:fillViewport="true"
+    android:scrollbarAlwaysDrawVerticalTrack="true"
+    android:scrollbarSize="10dp"
+    android:scrollbarStyle="insideInset"
+    android:scrollbarThumbVertical="@drawable/scrollbar_thumb"
+    android:scrollbarTrackVertical="@drawable/scrollbar_track"
+    android:scrollbars="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/hero_bg"
+            android:orientation="vertical"
+            android:padding="18dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="NAMMA-MISTRI FIELD DESK"
+                android:textColor="@color/gold"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/activeSiteText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textColor="#FFFFFF"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/siteStatusText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textColor="#D8E2DB"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <TextView
+                    android:id="@+id/dashboardCostText"
+                    style="@style/KpiText"
+                    android:layout_width="0dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/dashboardCrewText"
+                    style="@style/KpiText"
+                    android:layout_width="0dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <TextView
+                    android:id="@+id/dashboardMaterialText"
+                    style="@style/KpiText"
+                    android:layout_width="0dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/dashboardPhotosText"
+                    style="@style/KpiText"
+                    android:layout_width="0dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:background="@drawable/site_setup_bg"
+            android:orientation="vertical"
+            android:padding="14dp">
+
+            <TextView style="@style/PanelTitle" android:text="Project Setup" />
+            <TextView style="@style/PanelSubtitle" android:text="Set the active site before recording estimates, crew, and photos." />
+
+            <TextView style="@style/FormLabel" android:text="Active site" />
+
+            <EditText
+                android:id="@+id/siteInput"
+                style="@style/FormInput"
+                android:hint="Example: Basavanagudi House"
+                android:inputType="textCapWords" />
+
+            <Button
+                android:id="@+id/saveSiteButton"
+                style="@style/PrimaryButton"
+                android:layout_marginTop="10dp"
+                android:text="Save Project" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tabBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:background="@drawable/tab_bar_bg"
+            android:orientation="horizontal"
+            android:padding="5dp"
+            android:weightSum="4">
+
+            <Button android:id="@+id/calculatorTab" style="@style/TabButton" android:text="BOM" />
+            <Button android:id="@+id/teamTab" style="@style/TabButton" android:text="Crew" />
+            <Button android:id="@+id/photosTab" style="@style/TabButton" android:text="Photos" />
+            <Button android:id="@+id/ratesTab" style="@style/TabButton" android:text="Rates" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/calculatorPanel"
+            style="@style/Panel">
+
+            <TextView style="@style/PanelTitle" android:text="Quantity Survey" />
+            <TextView style="@style/PanelSubtitle" android:text="Fast wall and room takeoff for bricks, cement, sand, and cost." />
+
+            <RadioGroup
+                android:id="@+id/calcTypeGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/field_group_bg"
+                android:orientation="horizontal"
+                android:padding="6dp">
+
+                <RadioButton
+                    android:id="@+id/wallRadio"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:text="Wall"
+                    android:textStyle="bold" />
+
+                <RadioButton
+                    android:id="@+id/roomRadio"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:text="Room"
+                    android:textStyle="bold" />
+            </RadioGroup>
+
+            <LinearLayout style="@style/FormRow">
+                <LinearLayout style="@style/FormColumn">
+                    <TextView style="@style/FormLabel" android:text="Length (ft)" />
+                    <EditText android:id="@+id/lengthInput" style="@style/FormInput" android:inputType="numberDecimal" android:text="10" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/FormColumn" android:layout_marginLeft="10dp">
+                    <TextView style="@style/FormLabel" android:text="Width (ft)" />
+                    <EditText android:id="@+id/widthInput" style="@style/FormInput" android:inputType="numberDecimal" android:text="12" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout style="@style/FormRow">
+                <LinearLayout style="@style/FormColumn">
+                    <TextView style="@style/FormLabel" android:text="Height (ft)" />
+                    <EditText android:id="@+id/heightInput" style="@style/FormInput" android:inputType="numberDecimal" android:text="8" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/FormColumn" android:layout_marginLeft="10dp">
+                    <TextView style="@style/FormLabel" android:text="Waste (%)" />
+                    <EditText android:id="@+id/wasteInput" style="@style/FormInput" android:inputType="numberDecimal" android:text="5" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView style="@style/FormLabel" android:text="Wall thickness" />
+            <Spinner android:id="@+id/thicknessSpinner" style="@style/FormSpinner" />
+
+            <TextView style="@style/FormLabel" android:text="Mortar ratio" />
+            <Spinner android:id="@+id/ratioSpinner" style="@style/FormSpinner" />
+
+            <Button
+                android:id="@+id/calculateButton"
+                style="@style/PrimaryButton"
+                android:layout_marginTop="14dp"
+                android:text="Calculate Site BOM" />
+
+            <TextView style="@style/PanelTitle" android:layout_marginTop="18dp" android:text="Procurement Board" />
+            <TextView android:id="@+id/estimateDetailsText" style="@style/OutputText" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <TextView
+                    android:id="@+id/brickSummaryText"
+                    style="@style/MaterialCard"
+                    android:layout_width="0dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/cementSummaryText"
+                    style="@style/MaterialCard"
+                    android:layout_width="0dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/sandSummaryText"
+                    style="@style/MaterialCard"
+                    android:layout_width="0dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <TextView android:id="@+id/totalCostText" style="@style/CostText" />
+            <TextView android:id="@+id/costSplitText" style="@style/NoticeText" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/teamPanel"
+            style="@style/Panel"
+            android:visibility="gone">
+
+            <TextView style="@style/PanelTitle" android:text="Crew Ledger" />
+            <TextView style="@style/PanelSubtitle" android:text="Track attendance, advances, earned wages, and pending balance." />
+
+            <TextView android:id="@+id/teamStatsText" style="@style/NoticeText" />
+
+            <TextView style="@style/FormLabel" android:text="Worker name" />
+            <EditText android:id="@+id/workerNameInput" style="@style/FormInput" android:hint="Ramesh" android:inputType="textCapWords" />
+
+            <LinearLayout style="@style/FormRow">
+                <LinearLayout style="@style/FormColumn">
+                    <TextView style="@style/FormLabel" android:text="Daily wage (Rs)" />
+                    <EditText android:id="@+id/dailyWageInput" style="@style/FormInput" android:inputType="numberDecimal" android:text="700" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/FormColumn" android:layout_marginLeft="10dp">
+                    <TextView style="@style/FormLabel" android:text="Days" />
+                    <EditText android:id="@+id/daysWorkedInput" style="@style/FormInput" android:inputType="numberDecimal" android:text="1" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView style="@style/FormLabel" android:text="Advance paid (Rs)" />
+            <EditText android:id="@+id/advanceInput" style="@style/FormInput" android:inputType="numberDecimal" android:text="0" />
+
+            <Button
+                android:id="@+id/addWorkerButton"
+                style="@style/PrimaryButton"
+                android:layout_marginTop="14dp"
+                android:text="Log Crew Entry" />
+
+            <LinearLayout android:id="@+id/workerList" style="@style/ListContainer" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/photosPanel"
+            style="@style/Panel"
+            android:visibility="gone">
+
+            <TextView style="@style/PanelTitle" android:text="Progress Timeline" />
+            <TextView style="@style/PanelSubtitle" android:text="Keep owner-ready site documentation with date and note." />
+
+            <TextView android:id="@+id/photosStatsText" style="@style/NoticeText" />
+
+            <TextView style="@style/FormLabel" android:text="Progress note" />
+            <EditText android:id="@+id/photoNoteInput" style="@style/FormInput" android:hint="Lintel work completed" android:inputType="textCapSentences" />
+
+            <Button
+                android:id="@+id/pickPhotoButton"
+                style="@style/PrimaryButton"
+                android:layout_marginTop="14dp"
+                android:text="Attach Site Photo" />
+
+            <TextView android:id="@+id/clientUpdateText" style="@style/NoticeText" />
+            <LinearLayout android:id="@+id/photoList" style="@style/ListContainer" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ratesPanel"
+            style="@style/Panel"
+            android:visibility="gone">
+
+            <TextView style="@style/PanelTitle" android:text="Market Rate Book" />
+            <TextView style="@style/PanelSubtitle" android:text="Update local prices before preparing a procurement estimate." />
+
+            <TextView style="@style/FormLabel" android:text="Brick rate (Rs/piece)" />
+            <EditText android:id="@+id/brickRateInput" style="@style/FormInput" android:inputType="numberDecimal" />
+
+            <TextView style="@style/FormLabel" android:text="Cement rate (Rs/bag)" />
+            <EditText android:id="@+id/cementRateInput" style="@style/FormInput" android:inputType="numberDecimal" />
+
+            <TextView style="@style/FormLabel" android:text="Sand rate (Rs/load)" />
+            <EditText android:id="@+id/sandRateInput" style="@style/FormInput" android:inputType="numberDecimal" />
+
+            <Button
+                android:id="@+id/saveRatesButton"
+                style="@style/PrimaryButton"
+                android:layout_marginTop="14dp"
+                android:text="Update Market Rates" />
+
+            <TextView android:id="@+id/ratesSummaryText" style="@style/NoticeText" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

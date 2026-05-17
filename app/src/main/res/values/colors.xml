@@ -1,0 +1,16 @@
+<resources>
+    <color name="ink">#1D2522</color>
+    <color name="muted">#5D6862</color>
+    <color name="paper">#F6F2E8</color>
+    <color name="surface">#FFFAF0</color>
+    <color name="green">#276749</color>
+    <color name="green_dark">#174332</color>
+    <color name="brick">#A3442F</color>
+    <color name="gold">#C28A23</color>
+    <color name="line">#D8CFBF</color>
+    <color name="steel">#31546A</color>
+    <color name="cement">#737A72</color>
+    <color name="sand">#D1A64B</color>
+    <color name="panel">#FFFDF7</color>
+    <color name="field_dark">#202B27</color>
+</resources>
